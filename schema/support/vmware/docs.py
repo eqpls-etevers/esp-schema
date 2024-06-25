@@ -9,7 +9,7 @@ Equal Plus
 #===============================================================================
 from typing import List
 from pydantic import BaseModel
-from common import ID, Key, BaseSchema, ProfSchema, TagSchema, MetaSchema
+from common import SchemaConfig, LayerOpt, Reference, ID, Key, BaseSchema, ProfSchema, TagSchema, MetaSchema
 
 
 #===============================================================================
@@ -20,10 +20,14 @@ class KnowledgebaseContent(BaseModel):
     text:str = ''
 
 
+@SchemaConfig(
+major=1, minor=1,
+cacheOption=LayerOpt(expire=86400),
+searchOption=LayerOpt(expire=2419200))
 class Knowledgebase(BaseModel, BaseSchema):
     title:str = ''
     docId:Key = ''
     docType:Key = ''
     updateDate:Key = ''
-    products:List[str] = ''
+    products:List[str] = []
     contents:List[KnowledgebaseContent] = []
