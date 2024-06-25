@@ -15,8 +15,7 @@ from common import SchemaConfig, LayerOpt, Reference, ID, Key, BaseSchema, ProfS
 #===============================================================================
 # Implement
 #===============================================================================
-@SchemaConfig(
-major=1, minor=1,
+@SchemaConfig( 1 ,
 cacheOption=LayerOpt(expire=86400),
 searchOption=LayerOpt(expire=2419200))
 class Space(BaseModel, ProfSchema, BaseSchema):
@@ -25,8 +24,7 @@ class Space(BaseModel, ProfSchema, BaseSchema):
     homepageId:Key = ''
 
 
-@SchemaConfig(
-major=1, minor=1,
+@SchemaConfig( 1 ,
 cacheOption=LayerOpt(expire=86400),
 searchOption=LayerOpt(expire=2419200))
 class Page(BaseModel, ProfSchema, BaseSchema):

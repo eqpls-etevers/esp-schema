@@ -20,8 +20,7 @@ class KnowledgebaseContent(BaseModel):
     text:str = ''
 
 
-@SchemaConfig(
-major=1, minor=1,
+@SchemaConfig( 1 ,
 cacheOption=LayerOpt(expire=86400),
 searchOption=LayerOpt(expire=2419200))
 class Knowledgebase(BaseModel, BaseSchema):
